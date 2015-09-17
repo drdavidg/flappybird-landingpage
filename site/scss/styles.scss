@@ -1,13 +1,19 @@
 
 @import "site/bourbon/bourbon";
 @import "site/neat/neat";
+@import "site/base/base";
+@import url(https://fonts.googleapis.com/css?family=Freckle+Face);
+@import url(https://fonts.googleapis.com/css?family=Dosis);
 
-
+@font-face {
+	font-family: 'Freckle Face', cursive;
+	font-family: 'Dosis', sans-serif;
+}
 $bp-iphone6plus: 'min-width: 375px';
 
 
 body {
-	background-color: red;
+
 }
 nav {
 	width: 100%;
@@ -17,4 +23,46 @@ nav {
 		width: 10%;
 	}
 
+}
+header {
+	@include outer-container(100%);
+	img {
+		@include span-columns(6);
+		@include shift(3);
+		height: 50px;
+		width: 50px;
+		display: block;
+	}
+	h1 {
+		@include span-columns(6);
+		@include shift(3);
+		font-family: 'Freckle Face';
+		font-size: 4em;
+		margin: 0;
+	}
+}
+section.intro {
+	p {
+		font-family: 'Dosis';
+		font-size: 1.5em;
+	}
+	button img {
+		height: 40px;
+		width: 40px;
+		margin: 0 15px;
+	}
+	button {
+		//@include button;  //this is going to deprecatd from bourbon
+		font-size: 2em;
+	}
+}
+section.features1 {
+	img {
+		height: 325px;
+		width: 325px;
+	}
+	p {
+		font-family: 'Dosis';
+		font-size: 1.5em;
+	}
 }
