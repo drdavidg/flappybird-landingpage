@@ -1,3 +1,20 @@
+
+@import "site/bourbon/bourbon";
+@import "site/neat/neat";
+
+
+$bp-iphone6plus: 'min-width: 375px';
+
+
 body {
+	background-color: blue;
+}
+nav {
+	width: 100%;
+	li {
+		text-decoration: none;
+		display: block;
+		width: 10%;
+	}
 
 }
