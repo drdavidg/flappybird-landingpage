@@ -22,20 +22,29 @@ nav {
 	}
 
 }
+
 header {
 	@include outer-container(50%);
 	margin: 50px auto;
 	img {
 		@include fill-parent();
-		// @include shift(3);
+		@include shift(5);
+		@include animation(scale 1.0s ease-in, slide 2.0s ease);
+		@include keyframes(slide) {
+		  from {
+		    @include transform(translateX(-150px));
+		    opacity: 0;
+		  }
+		  to {
+		    @include transform(translateY(0));
+		    opacity: 1;
+		  }
+		}
 		height: 50px;
 		width: 50px;
 		display: block;
 		margin-bottom: 20px;
-		float: right;
-	}
-	img:hover {
-		@include animation(scale 1.0s ease-in, slide 2.0s ease);
+		float: left;
 	}
 	h1 {
 		@include span-columns(6);

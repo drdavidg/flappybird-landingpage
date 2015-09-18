@@ -213,15 +213,47 @@ header {
     display: table; }
   header img {
     width: 100%;
+    margin-left: 42.64902%;
+    -webkit-animation: scale 1s ease-in, slide 2s ease;
+    -moz-animation: scale 1s ease-in, slide 2s ease;
+    animation: scale 1s ease-in, slide 2s ease;
     height: 50px;
     width: 50px;
     display: block;
     margin-bottom: 20px;
-    float: right; }
-  header img:hover {
-    -webkit-animation: scale 1s ease-in, slide 2s ease;
-    -moz-animation: scale 1s ease-in, slide 2s ease;
-    animation: scale 1s ease-in, slide 2s ease; }
+    float: left; }
+
+@-webkit-keyframes slide {
+  from {
+    -webkit-transform: translateX(-150px);
+    opacity: 0; }
+  to {
+    -webkit-transform: translateY(0);
+    opacity: 1; } }
+
+@-moz-keyframes slide {
+  from {
+    -moz-transform: translateX(-150px);
+    opacity: 0; }
+  to {
+    -moz-transform: translateY(0);
+    opacity: 1; } }
+
+@keyframes slide {
+  from {
+    -webkit-transform: translateX(-150px);
+    -moz-transform: translateX(-150px);
+    -ms-transform: translateX(-150px);
+    -o-transform: translateX(-150px);
+    transform: translateX(-150px);
+    opacity: 0; }
+  to {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1; } }
   header h1 {
     float: left;
     display: block;
