@@ -1,11 +1,35 @@
+$colors-list: #6b889d, #6b739d, #7a6b9d;  //can use this if I want each quote to be a unique color
 
-.rw-words span{
-	animation: rotateWordsFirst 8s linear infinite 0s;
+@keyframes rotateWordsFirst {
+	0% { opacity: 1; animation-timing-function: ease-in; height: 0px; }
+	8% { opacity: 1; height: 60px; }
+	19% { opacity: 1; height: 60px; }
+	25% { opacity: 0; height: 60px; }
+	100% { opacity: 0; height: 0px;}
 }
+
+
 
 @for $i from 1 through 3 {
 	.rw-words span:nth-child(#{$i}) {
 		animation-delay: #{($i*3)}s;
-		color: #6b889d;
+		color: #7a6b9d;
+		@if animation-play-state == paused {
+			height: 0px; }
+		}
+		@else {
+			height: 0px;
+		}
+}
+.rw-words span{
+	animation: rotateWordsFirst 8s linear infinite 0s;
+	animation: hideQuotes 15s linear 10s 1;
+}
+
+@mixin hideQuotes {
+	@for $i from 1 through 3 {
+		.rw-words span:nth-child(#{$i}) {
+			display: hidden;
+		}
 	}
 }
