@@ -7,20 +7,16 @@
 @import url(https://fonts.googleapis.com/css?family=Dosis);
 @import url(https://www.google.com/fonts#UsePlace:use/Collection:Bree+Serif);
 
-@keyframes rotateWordsFirst {
-	0% { opacity: 1; animation-timing-function: ease-in; height: 0px; }
-	8% { opacity: 1; height: 60px; }
-	19% { opacity: 1; height: 60px; }
-	25% { opacity: 0; height: 60px; }
-	100% { opacity: 0;}
-}
 
 @font-face {
 	font-family: 'Freckle Face', cursive;
 	font-family: 'Dosis', sans-serif;
 	font-family: 'Bree Serif', sans-serif;
 }
-$bp-iphone6plus: 'min-width: 375px';
+$bp-iphone6plus: 'min-width: 414px';
+$ipadmini: new-breakpoint(min-width 768px);
+$iphone4: new-breakpoint(min-width 320px);
+
 body {
 	@include outer-container(80%);
 }
@@ -40,12 +36,19 @@ header {
 		margin: 0 auto;
 		height: 50px;
 		width: 50px;
-
+		@include media($ipadmini) {
+			height: 100px;
+			width: 100px;
+		}
 	}
 	h1 {
 		font-family: 'Freckle Face';
 		font-size: 4em;
+		@include media($ipadmini) {
+			font-size: 7em;
+		}
 		margin: 0;
+		text-align: center;
 	}
 }
 section.intro {
@@ -110,7 +113,7 @@ section.userquotes {
 			font-family: "Bree Serif";
 			font-size: 2em;
 			font-style: italic;
-
+			text-align: center;
 		}
 	}
 
@@ -121,10 +124,14 @@ section.appstore {
 	@include span-columns(12);
 	h2 {
 		text-align: center;
-		margin-bottom: 10px;
+		margin-bottom: 15px;
 	}
 	img {
 		@include shift(1);
+		@include media($iphone4) {
+			display: block;
+			margin: 15px auto;
+		}
 	}
 
 }

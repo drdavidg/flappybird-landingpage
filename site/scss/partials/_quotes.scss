@@ -23,7 +23,7 @@ $colors-list: #6b889d, #6b739d, #7a6b9d;  //can use this if I want each quote to
 }
 .rw-words span{
 	animation: rotateWordsFirst 8s linear infinite 0s;
-	animation: hideQuotes 15s linear 10s 1;
+ 	//animation: hideQuotes 15s linear 10s 1;
 }
 
 @mixin hideQuotes {

@@ -232,25 +232,7 @@ picture {
   height: 0px; }
 
 .rw-words span {
-  animation: rotateWordsFirst 8s linear infinite 0s;
-  animation: hideQuotes 15s linear 10s 1; }
-
-@keyframes rotateWordsFirst {
-  0% {
-    opacity: 1;
-    animation-timing-function: ease-in;
-    height: 0px; }
-  8% {
-    opacity: 1;
-    height: 60px; }
-  19% {
-    opacity: 1;
-    height: 60px; }
-  25% {
-    opacity: 0;
-    height: 60px; }
-  100% {
-    opacity: 0; } }
+  animation: rotateWordsFirst 8s linear infinite 0s; }
 
 @font-face {
   font-family: 'Freckle Face', cursive;
@@ -283,10 +265,18 @@ header {
     margin: 0 auto;
     height: 50px;
     width: 50px; }
+    @media screen and (min-width: 768px) {
+      header img {
+        height: 100px;
+        width: 100px; } }
   header h1 {
     font-family: 'Freckle Face';
     font-size: 4em;
-    margin: 0; }
+    margin: 0;
+    text-align: center; }
+    @media screen and (min-width: 768px) {
+      header h1 {
+        font-size: 7em; } }
 
 section.intro {
   float: left;
@@ -350,7 +340,8 @@ section.userquotes {
       opacity: 0;
       font-family: "Bree Serif";
       font-size: 2em;
-      font-style: italic; }
+      font-style: italic;
+      text-align: center; }
 
 section.appstore {
   margin-top: 200px;
@@ -363,6 +354,10 @@ section.appstore {
     margin-right: 0; }
   section.appstore h2 {
     text-align: center;
-    margin-bottom: 10px; }
+    margin-bottom: 15px; }
   section.appstore img {
     margin-left: 8.5298%; }
+    @media screen and (min-width: 320px) {
+      section.appstore img {
+        display: block;
+        margin: 15px auto; } }
