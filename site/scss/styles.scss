@@ -2,9 +2,18 @@
 @import "site/bourbon/bourbon";
 @import "site/neat/neat";
 @import "site/base/base";
+@import "site/scss/partials/_quotes";
 @import url(https://fonts.googleapis.com/css?family=Freckle+Face);
 @import url(https://fonts.googleapis.com/css?family=Dosis);
 @import url(https://www.google.com/fonts#UsePlace:use/Collection:Bree+Serif);
+
+@keyframes rotateWordsFirst {
+	0% { opacity: 1; animation-timing-function: ease-in; height: 0px; }
+	8% { opacity: 1; height: 60px; }
+	19% { opacity: 1; height: 60px; }
+	25% { opacity: 0; height: 60px; }
+	100% { opacity: 0;}
+}
 
 @font-face {
 	font-family: 'Freckle Face', cursive;
@@ -16,7 +25,7 @@ body {
 	@include outer-container(80%);
 }
 nav {
-	li {
+	ul li {
 		text-decoration: none;
 		display: block;
 	}
@@ -25,73 +34,10 @@ nav {
 
 header {
 	@include span-columns(12);
-	margin: 25px auto;
+	margin: 25px 0;
 	img {
-		//@include fill-parent();
-		@include shift(5);
-		//@include animation(scale 1.0s ease-in, slide 2.0s ease);
-		// @include keyframes(slide) {
-		//   from {
-		//     @include transform(translateX(-150px));
-		//     opacity: 0;
-		//   }
-		//   to {
-		//     @include transform(translateY(0));
-		//     opacity: 1;
-		//   }
-		// }
-		/* Webkit, Chrome and Safari */
-		// @-webkit-keyframes {
-		//   0% {
-		// 	-webkit-transform:translateY(-100%);
-		//     opacity: 0;
-		//   }
-		//   5% {
-		//   	-webkit-transform:translateY(-100%);
-		//     opacity: 0;
-		//   }
-		//   15% {
-		//   	-webkit-transform:translateY(0);
-		//     padding-bottom: 5px;
-		//   }
-		//   30% {
-		//   	-webkit-transform:translateY(-50%);
-		//   }
-		//   40% {
-		//   	-webkit-transform:translateY(0%);
-		//     padding-bottom: 6px;
-		//   }
-		//   50% {
-		//   	-webkit-transform:translateY(-30%);
-		//   }
-		//   70% {
-		//   	-webkit-transform:translateY(0%);
-		//     padding-bottom: 7px;
-		//   }
-		//   80% {
-		//   	-webkit-transform:translateY(-15%);
-		//   }
-		//   90% {
-		//   	-webkit-transform:translateY(0%);
-		//   	padding-bottom: 8px;
-		//   }
-		//   95% {
-		//   	-webkit-transform:translateY(-10%);
-		//   }
-		//   97% {
-		//   	-webkit-transform:translateY(0%);
-		//   	padding-bottom: 9px;
-		//   }
-		//   99% {
-		//   	-webkit-transform:translateY(-5%);
-		//   }
-		//   100% {
-		//   	-webkit-transform:translateY(0);
-		//   	padding-bottom: 9px;
-		//     opacity: 1;
-		//   }
-		// }
-
+		display: block;
+		margin: 0 auto;
 		height: 50px;
 		width: 50px;
 
@@ -111,9 +57,10 @@ section.intro {
 		text-align: center;
 	}
 	button {
-		@include span-columns(9 of 12);
 		font-size: 1.5em;
-		@include shift(2 of 12);
+		display: block;
+		margin: 0 auto;
+		//@include shift(2 of 12);
 		img {
 			height: 35px;
 			width: 35px;
@@ -141,14 +88,10 @@ section.features1 {
 	}
 }
 section.userquotes {
-	margin: 50px auto;
 	@include span-columns(12);
-	@keyframes rotateWordsFirst {
-		0% { opacity: 1; animation-timing-function: ease-in; height: 0px; }
-		8% { opacity: 1; height: 60px; }
-		19% { opacity: 1; height: 60px; }
-		25% { opacity: 0; height: 60px; }
-		100% { opacity: 0; }
+	margin: 50px auto;
+	h2 {
+		text-align: center;
 	}
 	.rw-sentence > span {
 		display: block;
@@ -157,20 +100,17 @@ section.userquotes {
 		text-align: center;
 		font-style: italic;
 	}
-	.rw-words {
-		@include span-columns(6);
-		@include pad(1);
+	div.rw-words {
 		margin-top: 15px;
 		span {
-			position: absolute;
+			position: relative;
 			opacity: 0;
 			//overflow: hidden;
 			///width: 100%;
 			font-family: "Bree Serif";
 			font-size: 2em;
 			font-style: italic;
-			text-align: center;
-			vertical-align: middle;
+
 		}
 	}
 
@@ -187,29 +127,4 @@ section.appstore {
 		@include shift(1);
 	}
 
-}
-
-
-.rw-words-1 span{
-	animation: rotateWordsFirst 8s linear infinite 0s;
-}
-.rw-words span:nth-child(2) {
-	animation-delay: 3s;
-	color: #6b889d;
-}
-.rw-words span:nth-child(3) {
-	animation-delay: 6s;
-	color: #6b739d;
-}
-.rw-words span:nth-child(4) {
-	animation-delay: 9s;
-	color: #7a6b9d;
-}
-.rw-words span:nth-child(5) {
-	animation-delay: 12s;
-	color: #8d6b9d;
-}
-.rw-words span:nth-child(6) {
-	animation-delay: 15s;
-	color: #9b6b9d;
 }
