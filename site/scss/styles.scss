@@ -141,7 +141,7 @@ section.features1 {
 	}
 }
 section.userquotes {
-	margin-top: 50px;
+	margin: 50px auto;
 	@include span-columns(12);
 	@keyframes rotateWordsFirst {
 		0% { opacity: 1; animation-timing-function: ease-in; height: 0px; }
@@ -152,26 +152,46 @@ section.userquotes {
 	}
 	.rw-sentence > span {
 		display: block;
+		font-family: 'Dosis';
+		font-size: 1.5em;
+		text-align: center;
+		font-style: italic;
 	}
 	.rw-words {
-		@include span-columns(4 of 8);
+		@include span-columns(6);
+		@include pad(1);
+		margin-top: 15px;
 		span {
 			position: absolute;
 			opacity: 0;
-			overflow: hidden;
+			//overflow: hidden;
 			///width: 100%;
 			font-family: "Bree Serif";
 			font-size: 2em;
+			font-style: italic;
 			text-align: center;
+			vertical-align: middle;
 		}
 	}
 
 }
-.rw-words-1 span{
-	animation: rotateWordsFirst 18s linear infinite 0s;
+section.appstore {
+	margin-top: 200px;
+	margin-bottom: 50px;
+	@include span-columns(12);
+	h2 {
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	img {
+		@include shift(1);
+	}
+
 }
-.rw-words-2 span{
-	animation: rotateWordsSecond 18s linear infinite 0s;
+
+
+.rw-words-1 span{
+	animation: rotateWordsFirst 8s linear infinite 0s;
 }
 .rw-words span:nth-child(2) {
 	animation-delay: 3s;

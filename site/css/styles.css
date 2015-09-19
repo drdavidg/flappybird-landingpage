@@ -273,7 +273,7 @@ section.features1 {
     text-align: center; }
 
 section.userquotes {
-  margin-top: 50px;
+  margin: 50px auto;
   float: left;
   display: block;
   margin-right: 2.35765%;
@@ -298,27 +298,46 @@ section.userquotes {
   100% {
     opacity: 0; } }
   section.userquotes .rw-sentence > span {
-    display: block; }
+    display: block;
+    font-family: 'Dosis';
+    font-size: 1.5em;
+    text-align: center;
+    font-style: italic; }
   section.userquotes .rw-words {
     float: left;
     display: block;
-    margin-right: 3.57866%;
-    width: 48.21067%; }
+    margin-right: 2.35765%;
+    width: 48.82117%;
+    padding: 1;
+    margin-top: 15px; }
     section.userquotes .rw-words:last-child {
       margin-right: 0; }
     section.userquotes .rw-words span {
       position: absolute;
       opacity: 0;
-      overflow: hidden;
       font-family: "Bree Serif";
       font-size: 2em;
-      text-align: center; }
+      font-style: italic;
+      text-align: center;
+      vertical-align: middle; }
+
+section.appstore {
+  margin-top: 200px;
+  margin-bottom: 50px;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  section.appstore:last-child {
+    margin-right: 0; }
+  section.appstore h2 {
+    text-align: center;
+    margin-bottom: 10px; }
+  section.appstore img {
+    margin-left: 8.5298%; }
 
 .rw-words-1 span {
-  animation: rotateWordsFirst 18s linear infinite 0s; }
-
-.rw-words-2 span {
-  animation: rotateWordsSecond 18s linear infinite 0s; }
+  animation: rotateWordsFirst 8s linear infinite 0s; }
 
 .rw-words span:nth-child(2) {
   animation-delay: 3s;
