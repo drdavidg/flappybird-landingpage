@@ -1,5 +1,18 @@
 $colors-list: #6b889d, #6b739d, #7a6b9d;  //can use this if I want each quote to be a unique color
 
+.quotes-container {
+	position: relative;
+}
+.quotes-container span {
+	opacity: 0;
+	display: block;
+	width: 100%;
+	left: 0;
+	top: 0;
+	height: 60px;
+	position: absolute;
+	text-align: center;
+}
 @keyframes rotateWordsFirst {
 	0% { opacity: 1; animation-timing-function: ease-in; height: 0px; }
 	8% { opacity: 1; height: 60px; }
@@ -11,7 +24,7 @@ $colors-list: #6b889d, #6b739d, #7a6b9d;  //can use this if I want each quote to
 
 
 @for $i from 1 through 3 {
-	.rw-words span:nth-child(#{$i}) {
+	.quotes-container span:nth-child(#{$i}) {
 		animation-delay: #{($i*3)}s;
 		color: #7a6b9d;
 		@if animation-play-state == paused {
@@ -21,15 +34,19 @@ $colors-list: #6b889d, #6b739d, #7a6b9d;  //can use this if I want each quote to
 			height: 0px;
 		}
 }
-.rw-words span{
+.quotes-container span{
 	animation: rotateWordsFirst 8s linear infinite 0s;
  	//animation: hideQuotes 15s linear 10s 1;
 }
 
-@mixin hideQuotes {
-	@for $i from 1 through 3 {
-		.rw-words span:nth-child(#{$i}) {
-			display: hidden;
-		}
-	}
-}
+// @mixin hideQuotes {
+// 	@for $i from 1 through 3 {
+// 		.quotes-container span:nth-child(#{$i}) {
+// 			position: absolute;
+// 			z-index: $i;
+// 			left: 0;
+// 			top: 0;
+// 			height: 50px;
+// 		}
+// 	}
+// }
