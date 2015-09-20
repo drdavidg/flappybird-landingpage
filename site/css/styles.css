@@ -192,61 +192,6 @@ picture {
   margin: 0;
   max-width: 100%; }
 
-.quotes-container {
-  position: relative; }
-
-.quotes-container span {
-  opacity: 0;
-  display: block;
-  width: 100%;
-  left: 0;
-  top: 0;
-  height: 60px;
-  position: absolute;
-  text-align: center; }
-
-@keyframes rotateWordsFirst {
-  0% {
-    opacity: 1;
-    animation-timing-function: ease-in;
-    height: 0px; }
-  8% {
-    opacity: 1;
-    height: 60px; }
-  19% {
-    opacity: 1;
-    height: 60px; }
-  25% {
-    opacity: 0;
-    height: 60px; }
-  100% {
-    opacity: 0;
-    height: 0px; } }
-
-.quotes-container span:nth-child(1) {
-  animation-delay: 3s;
-  color: #7a6b9d; }
-
-@else {
-  height: 0px; }
-
-.quotes-container span:nth-child(2) {
-  animation-delay: 6s;
-  color: #7a6b9d; }
-
-@else {
-  height: 0px; }
-
-.quotes-container span:nth-child(3) {
-  animation-delay: 9s;
-  color: #7a6b9d; }
-
-@else {
-  height: 0px; }
-
-.quotes-container span {
-  animation: rotateWordsFirst 8s linear infinite 0s; }
-
 @font-face {
   font-family: 'Freckle Face', cursive;
   font-family: 'Dosis', sans-serif;
@@ -260,10 +205,6 @@ body {
     clear: both;
     content: "";
     display: table; }
-
-nav ul li {
-  text-decoration: none;
-  display: block; }
 
 header {
   float: left;
@@ -340,21 +281,20 @@ section.userquotes {
     margin-right: 0; }
   section.userquotes h2 {
     text-align: center; }
-  section.userquotes .rw-sentence > span {
+  section.userquotes h2 span {
     display: block;
     font-family: 'Dosis';
     font-size: 1.5em;
     text-align: center;
     font-style: italic; }
-  section.userquotes div.rw-words {
+  section.userquotes div.quotes-container {
     margin-top: 15px; }
-    section.userquotes div.rw-words span {
-      position: relative;
-      opacity: 0;
+    section.userquotes div.quotes-container span {
       font-family: "Bree Serif";
       font-size: 2em;
       font-style: italic;
-      text-align: center; }
+      text-align: center;
+      display: none; }
 
 section.appstore {
   margin-top: 200px;

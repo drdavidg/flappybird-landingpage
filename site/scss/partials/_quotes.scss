@@ -1,4 +1,4 @@
-$colors-list: #6b889d, #6b739d, #7a6b9d;  //can use this if I want each quote to be a unique color
+$colors-list: #6b889d, #6b739d, #7a6b9d;
 
 .quotes-container {
 	position: relative;
@@ -6,7 +6,6 @@ $colors-list: #6b889d, #6b739d, #7a6b9d;  //can use this if I want each quote to
 .quotes-container span {
 	opacity: 0;
 	display: block;
-	width: 100%;
 	left: 0;
 	top: 0;
 	height: 60px;
@@ -21,32 +20,12 @@ $colors-list: #6b889d, #6b739d, #7a6b9d;  //can use this if I want each quote to
 	100% { opacity: 0; height: 0px;}
 }
 
-
-
 @for $i from 1 through 3 {
 	.quotes-container span:nth-child(#{$i}) {
 		animation-delay: #{($i*3)}s;
-		color: #7a6b9d;
-		@if animation-play-state == paused {
-			height: 0px; }
-		}
-		@else {
-			height: 0px;
-		}
+		color: nth($colors-list, $i);
+	}
 }
 .quotes-container span{
 	animation: rotateWordsFirst 8s linear infinite 0s;
- 	//animation: hideQuotes 15s linear 10s 1;
 }
-
-// @mixin hideQuotes {
-// 	@for $i from 1 through 3 {
-// 		.quotes-container span:nth-child(#{$i}) {
-// 			position: absolute;
-// 			z-index: $i;
-// 			left: 0;
-// 			top: 0;
-// 			height: 50px;
-// 		}
-// 	}
-// }

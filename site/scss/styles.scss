@@ -2,7 +2,7 @@
 @import "site/bourbon/bourbon";
 @import "site/neat/neat";
 @import "site/base/base";
-@import "site/scss/partials/_quotes";
+//@import "site/scss/partials/_quotes";
 @import url(https://fonts.googleapis.com/css?family=Freckle+Face);
 @import url(https://fonts.googleapis.com/css?family=Dosis);
 @import url(https://www.google.com/fonts#UsePlace:use/Collection:Bree+Serif);
@@ -20,14 +20,6 @@ $iphone4: new-breakpoint(min-width 320px);
 body {
 	@include outer-container(80%);
 }
-nav {
-	ul li {
-		text-decoration: none;
-		display: block;
-	}
-
-}
-
 header {
 	@include span-columns(12);
 	margin: 25px 0;
@@ -96,24 +88,21 @@ section.userquotes {
 	h2 {
 		text-align: center;
 	}
-	.rw-sentence > span {
+	h2 span {
 		display: block;
 		font-family: 'Dosis';
 		font-size: 1.5em;
 		text-align: center;
 		font-style: italic;
 	}
-	div.rw-words {
+	div.quotes-container {
 		margin-top: 15px;
 		span {
-			position: relative;
-			opacity: 0;
-			//overflow: hidden;
-			///width: 100%;
 			font-family: "Bree Serif";
 			font-size: 2em;
 			font-style: italic;
 			text-align: center;
+			display: none;
 		}
 	}
 
