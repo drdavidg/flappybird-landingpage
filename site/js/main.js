@@ -4,7 +4,12 @@ $(document).ready(function() {
 	.velocity("transition.bounceDownIn", {duration: 600, easing: "swing", delay: 200, display: "block"})
 	.velocity("callout.pulse", {duration: 500, loop: true });
 	$("h1").velocity("transition.bounceLeftIn", { duration: 1000 });
-
+	$(".birdlogo").mousedown(function(event) {
+		$(this).velocity("callout.swing", {duration: 3500});
+	});
+	$("h1").mousedown(function(event) {
+		$(this).velocity("callout.swing", {duration: 3500});
+	});
 
 	function runQuotes() {
 		$(".quotes-container > span:nth-child(1)")
